@@ -5,8 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
 import { Image } from "react-native";
 import CustomButton from "../components/CustomButton";
+import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
+  const { isLoading, isLoggedin } = useGlobalContext;
+
+  if (!isLoading && isLoggedin) return <Redirect href="/home" />;
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>

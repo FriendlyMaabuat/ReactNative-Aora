@@ -197,3 +197,7 @@ vendor/
 
 # CircleCI
 .circleci/generated_config.yml
+
+# Environment Variables
+.env
+env/
